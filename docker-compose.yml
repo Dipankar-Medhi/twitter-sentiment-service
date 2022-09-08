@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   api:
@@ -6,9 +6,7 @@ services:
     command: uvicorn app:app --host=0.0.0.0 --reload
     ports:
       - "8000:8000"
-    environment:
-      - PRIVATE_KEY_ID="8e517e665f05ae0a537ab4a185208246d68aaaa4"
-    
+
   classification:
     build: ./classification
     command: uvicorn app:app --host=0.0.0.0 --port 3000 --reload
