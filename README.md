@@ -1,5 +1,5 @@
-# Twitter Sentiment service
-Visualize Twitter user sentiments for popular companies every week or month.
+# User & Company relationship visualizing application
+Visualize user sentiments for popular companies every week or month.
 
 ![demo](images/frontend-demo.png)
 
