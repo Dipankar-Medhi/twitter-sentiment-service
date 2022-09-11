@@ -6,6 +6,16 @@ Visualize user sentiments for popular companies every week or month.
 ## Project architecture
 ![architechture](images/microservice-architecture.png)
 
+Let's understand the services in brief.
+
+- **API service** - An api gateway that manages all key data calling functionalities and creates a single point access for other microservices. 
+- **Scraper** - The tweets scrapping microservice, whose only purpose is to get tweets from Twitter and store them inside a database. 
+
+   Since, the scraper requirement is only once or twice a month, there is no need for a streaming service. That is the reason why a database is considered more easy and simple than any other real-time tool like Kafka.
+- **Classification** - The classification service uses Hugging face model for sentiment prediction of the tweets. Then the percentage of the different sentiments are calculated and store inside a database. 
+- **Frontend** - The sentiments, stored on the database, are fetched by the frontend service and displayed to the users in the form of charts.
+
+
 ## Project setup
 There are a few things that are needed to be done before starting the containers.
 1. Since we are using firebase, make a firebase project and create a realtime database. 
